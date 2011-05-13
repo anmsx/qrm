@@ -1,0 +1,19 @@
+<%= render 'list' %>
+
+<div class="box box-50">
+	<div class="boxin">
+		<div class="header">
+			<h3>Salas</h3>
+			<%= link_to 'Cancelar', salas_path, :class => 'button altbutton'%>
+		</div>
+		<div class="internal_content">
+			<% form_tag request.path, :method => 'get' do %>
+			  <% content_tag :label do %>
+			    Nome:
+			    <%= text_field_tag :q, params[:q] %>
+			  <% end %>
+		    <%= submit_tag 'Procurar' %>
+			<% end %>
+		</div>
+	</div>
+</div>

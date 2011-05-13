@@ -1,0 +1,19 @@
+<div class="contentcontainer">
+	<div class="headings alt">
+    	<h2>Detalhes da sala <%= @sala.nome %></h2>
+	</div>
+	<div class="contentbox">
+		<%= simple_form_for @sala do |f| %>
+			<div class="inner-form">
+				<strong>Nome:</strong> <%= @sala.nome %><br />
+				<strong>Localização:</strong> <%= @sala.localizacao %><br />
+				<strong>Horário:</strong> <%= @sala.horario_inicio %> - <%=  @sala.horario_termino %><br />
+        		<br /><br />
+				<%= link_to 'Editar', edit_sala_path(@sala, :page => @page), :class => 'button'%>
+				<%= link_to 'Excluir', sala_path(@sala, :page => @page), :class => 'button altbutton', :confirm => 'Você tem certeza ?', :method => :delete %>
+			</div>
+		<% end %>
+	</div>
+</div>
+
+<%= render 'list' %>

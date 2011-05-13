@@ -1,0 +1,29 @@
+<div class="contentcontainer">
+	<div class="headings alt">
+    	<h2>Salas cadastradas</h2>
+	</div>
+	<div class="contentbox">
+		<div>
+			<table cellspacing="0">
+				<thead>
+					<tr>
+						<th>Nome</th>
+						<th>Ações</th>
+					</tr>
+				</thead>
+				<tbody>
+					<% @salas.each do |sala|%>
+					<tr class="first">
+						<td width="100%"><%= sala.nome %></td>
+						<td class="tc">
+							<ul class="actions">
+								<li><%= link_to 'Detalhes', sala_path(sala, :page => @page),  :title => 'edit', :class => 'button' %></li>
+							</ul>
+						</td>
+					</tr>
+					<% end %>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>

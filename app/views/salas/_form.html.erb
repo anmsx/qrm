@@ -1,0 +1,27 @@
+<div class="contentcontainer">
+	<div class="headings alt">
+    	<h2>Informações da sala</h2>
+	</div>
+	<div class="contentbox">
+		<div>
+			<%= simple_form_for @sala do |f| %>
+			<%= f.input :nome, :label => 'Nome', :input_html => { :class => 'inputbox' } %><br />
+			<%= f.input :capacidade, :label => 'Capacidade', :input_html => { :class => 'inputbox', :maxlength => 20 } %><br />
+			<%= f.input :localizacao, :label => 'Localização', :input_html => { :class => 'inputbox' } %><br />
+
+			<%= f.input :horario_inicio, :label => 'Horário (início):', :input_html => { :class => 'inputbox' } %><br />
+			<%= f.input :horario_termino, :label => 'Horário (término):', :input_html => { :class => 'inputbox' } %><br />
+
+
+			<h2>Recursos</h2><br />
+			<%= label :ar_condicionado, 'Ar-condicionado', :class => 'string' %>
+			<%= f.collection_radio :ar_condicionado, [['sim', 'Sim'] ,['nao', 'Não']], :first, :last %><br />
+			
+			<%= label :ar_condicionado, 'Internet', :class => 'string' %>
+			<%= f.collection_radio :internet, [['sim', 'Sim'] ,['nao', 'Não']], :first, :last %><br />
+
+			<%= f.button :submit, 'Salvar'  %><br />
+			<% end %>
+		</div>
+    </div>
+</div>

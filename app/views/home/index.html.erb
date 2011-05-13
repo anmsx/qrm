@@ -1,0 +1,3 @@
+Bem vindo <%= current_user.name %>, você escolheu o plano <%= current_user.profile.plan %>
+<br />
+<%= link_to 'Logout', destroy_user_session_path%>

@@ -1,0 +1,50 @@
+<div class="contentcontainer">
+	<div class="headings alt">
+    	<h2>Efetuar cadastro</h2>
+	</div>
+	<div class="contentbox">
+
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+
+	<ul>
+  		<%-  resource.errors.each do |msg| %>
+    	<li>- <%= msg[1] %></li>
+  		<%- end %>
+	</ul>
+
+  	<p>
+		<%= f.label :name, 'Nome' %>
+  		<%= f.text_field :name, :class => 'inputbox' %><br />
+	</p>
+
+  <p><%= f.label :company, 'Empresa' %>
+  <%= f.text_field :company, :class => 'inputbox'  %><br /><br /></p>
+
+
+  <p><%= f.label :email, 'Email' %>
+  <%= f.email_field :email, :class => 'inputbox'  %><br /><br /></p>
+
+  <p><%= f.label :password, 'Senha' %>
+  <%= f.password_field :password, :class => 'inputbox'  %><br /><br /></p>
+
+  <p><%= f.label :password_confirmation, 'Confirmação de senha' %>
+  <%= f.password_field :password_confirmation, :class => 'inputbox'  %><br /><br /></p>
+
+	<p>
+		Planos<br />
+		<%= radio_button_tag('user_plan', "basic", true)%> Básico<br />
+		<%= radio_button_tag('user_plan', "premium")%> Premium<br />
+		<%= radio_button_tag('user_plan', "max")%> Max<br />
+	</p>
+	
+	<p>
+		Contrato de uso:<br />
+		<iframe src="/contrato.html" width="600" height="200" style="border:solid 1px #ccc;"></iframe><br />
+		Ao finalizar o cadastro você estará completamente de acordo com os termos acima.
+	</p>
+
+  <p><%= f.submit "Efetuar cadastro" %></p>
+<% end %>
+
+	</div>
+</div>

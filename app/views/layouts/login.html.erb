@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>QRM - Login</title>
+
+<%= javascript_include_tag :defaults %>
+<%= stylesheet_link_tag :all %>
+<%= stylesheet_link_tag 'blue/styles' %>
+
+</head>
+<body>
+
+	<div id="logincontainer">
+		<% if !alert.nil? %>
+    		<div class="status error">
+    			<p><img src="/images/icons/icon_error.png" alt="Error" /> <%= alert %></p>
+    		</div>
+		<% end %>
+		<% if !notice.nil? %>
+    		<div class="status info">
+    			<p><img src="/images/icons/icon_info.png" alt="Information" /><%= notice %></p>
+    		</div>
+		<% end %>
+    	<div id="loginbox">
+        	<div id="loginheader">
+            	<img src="/images/qrm.png" alt="QRM Login" />
+            </div>
+            <div id="innerlogin">
+				<%= yield %>
+            </div>
+        </div>
+        <img src="/images/login_fade.png" alt="Fade" />
+    </div>
+</body>
+</html>
