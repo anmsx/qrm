@@ -14,10 +14,12 @@ test:
   <<: *defaults
   database: qrm_test
 
+  mongodb://heroku:smqogrm8c5ndhym9j1zqji@flame.mongohq.com:27105/app552417
+
 # set these environment variables on your prod server
 production:
-  host: <%= ENV['MONGOID_HOST'] %>
-  port: <%= ENV['MONGOID_PORT'] %>
-  username: <%= ENV['MONGOID_USERNAME'] %>
-  password: <%= ENV['MONGOID_PASSWORD'] %>
-  database: <%= ENV['MONGOID_DATABASE'] %>
+  host: flame.mongohq.com 
+  port: 27105
+  username: heroku
+  password: smqogrm8c5ndhym9j1zqji
+  database: app552417 
