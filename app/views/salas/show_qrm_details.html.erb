@@ -1,0 +1,9 @@
+<html>
+	<head>
+		<%= javascript_include_tag :defaults %>
+		<title>QRM</title>
+	</head>
+	<body>
+		<%= raw(qrcode(escape_javascript(@sala.qrm_details), 4, 10, 'my-qrcode')) %>
+	</body>
+</html>

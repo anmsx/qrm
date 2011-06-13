@@ -1,0 +1,25 @@
+<html>
+	<head>
+		<%= javascript_include_tag :defaults %>
+		<title>QRM</title>
+	</head>
+	<body>
+<h1>QRM</h1>
+<h2>Informações</h2>
+<strong>Nome:</strong> <%= @sala.nome %><br />
+<strong>Capacidade:</strong> <%= @sala.capacidade %><br />
+<strong>Localização:</strong> <%= @sala.localizacao %><br />
+<strong>Responsável:</strong> <%= @sala.responsavel %><br />
+<strong>Tema:</strong> <%= @sala.tema %><br />
+<strong>Maiores informações:</strong> <pre><%= @sala.maiores_informacoes %></pre><br />
+
+<h2>Recursos</h2>
+<strong>Ar-condicionado:</strong> <%= @sala.ar_condicionado %><br />
+<strong>Internet:</strong> <%= @sala.internet %><br />
+<strong>Energia elétrica:</strong> <%= @sala.energia_eletrica %><br />
+<strong>Whiteboard:</strong> <%= @sala.whiteboard %><br />
+<strong>Ethernet:</strong> <%= @sala.ethernet %><br />
+<strong>Projetor:</strong> <%= @sala.projetor %><br /><br />
+
+	</body>
+</html>
