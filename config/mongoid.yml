@@ -1,9 +1,6 @@
 defaults: &defaults
-  host: flame.mongohq.com 
-  port: 27105
-  username: heroku
-  password: smqogrm8c5ndhym9j1zqji
-  database: app552417 
+  host: localhost 
+  database: qrm_development 
   # slaves:
   #   - host: slave1.local
   #     port: 27018
@@ -22,8 +19,4 @@ test:
 
 # set these environment variables on your prod server
 production:
-  host: flame.mongohq.com 
-  port: 27105
-  username: heroku
-  password: smqogrm8c5ndhym9j1zqji
-  database: app552417 
+  <<: *defaults
