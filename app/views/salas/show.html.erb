@@ -5,10 +5,28 @@
 	<div class="contentbox">
 		<%= simple_form_for @sala do |f| %>
 			<div class="inner-form">
+				<div style="float:right;">
+					Clique para exibir para impressão<br /><br />
+					<a href="/salas/<%= @sala.id %>/qrm_details" target="_blank">
+						<%= raw(qrcode(escape_javascript(@sala.qrm_details), 4, 10, 'my-qrcode')) %>
+					</a>
+				</div>
+				<h2>Informações</h2>
 				<strong>Nome:</strong> <%= @sala.nome %><br />
+				<strong>Capacidade:</strong> <%= @sala.capacidade %><br />
 				<strong>Localização:</strong> <%= @sala.localizacao %><br />
-				<strong>Horário:</strong> <%= @sala.horario_inicio %> - <%=  @sala.horario_termino %><br />
-        		<br /><br />
+				<strong>Responsável:</strong> <%= @sala.responsavel %><br />
+				<strong>Tema:</strong> <%= @sala.tema %><br />
+				<strong>Maiores informações:</strong> <pre><%= @sala.maiores_informacoes %></pre><br />
+
+				<h2>Recursos</h2>
+				<strong>Ar-condicionado:</strong> <%= @sala.ar_condicionado %><br />
+				<strong>Internet:</strong> <%= @sala.internet %><br />
+				<strong>Energia elétrica:</strong> <%= @sala.energia_eletrica %><br />
+				<strong>Whiteboard:</strong> <%= @sala.whiteboard %><br />
+				<strong>Ethernet:</strong> <%= @sala.ethernet %><br />
+				<strong>Projetor:</strong> <%= @sala.projetor %><br /><br />
+
 				<%= link_to 'Editar', edit_sala_path(@sala, :page => @page), :class => 'button'%>
 				<%= link_to 'Excluir', sala_path(@sala, :page => @page), :class => 'button altbutton', :confirm => 'Você tem certeza ?', :method => :delete %>
 			</div>

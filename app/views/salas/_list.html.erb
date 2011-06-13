@@ -14,11 +14,11 @@
 				<tbody>
 					<% @salas.each do |sala|%>
 					<tr class="first">
-						<td width="100%"><%= sala.nome %></td>
-						<td class="tc">
-							<ul class="actions">
-								<li><%= link_to 'Detalhes', sala_path(sala, :page => @page),  :title => 'edit', :class => 'button' %></li>
-							</ul>
+						<td width="700"><%= sala.nome %></td>
+						<td class="tc" width="300">
+								<%= link_to 'Detalhes', sala_path(sala, :page => @page),  :title => 'edit', :class => 'button' %>
+								<% link_to 'Detalhes (aberto)', show_open_sala_path(sala, :page => @page),  :title => 'edit', :class => 'button' %> 
+								<%= link_to 'QR-Code', qrm_details_sala_path(sala),  :title => 'edit', :class => 'button' %>
 						</td>
 					</tr>
 					<% end %>

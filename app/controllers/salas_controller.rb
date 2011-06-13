@@ -1,5 +1,5 @@
 class SalasController < ApplicationController
-  before_filter :authenticate_user!
+  before_filter :authenticate_user!, :except => [:show_open]
   
   def new
     @sala = Sala.new
@@ -15,6 +15,16 @@ class SalasController < ApplicationController
   def show
     @sala = Sala.find params[:id]
     @salas = Sala.all
+  end
+  
+  def show_open
+    @sala = Sala.find params[:id]
+    render 'show_open.html.erb', :layout => false
+  end
+
+  def qrm_details
+    @sala = Sala.find params[:id]
+    render 'show_qrm_details.html.erb', :layout => false
   end
   
   def edit

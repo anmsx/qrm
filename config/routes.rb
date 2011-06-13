@@ -3,6 +3,12 @@ Qrm::Application.routes.draw do
 
   match 'home/index' => 'home#index'
 
-  resources :salas
+  resources :salas do
+    member do
+      get 'show_open', :as => 'show_open'
+      get 'qrm_details', :as => 'qrm_details'
+    end
+  end
+  
   root :to => "home#index"
 end
